@@ -1,0 +1,17 @@
+
+##(a+b)^2
+
+import tensorflow as tf
+a=tf.multiply(1,1)
+b=tf.multiply(2,1)
+c=tf.multiply(a,a)
+d=tf.multiply(b,b)
+e=tf.multiply(a,b)
+f=tf.multiply(2,e)
+g=tf.add(c,d)
+h=tf.add(g,f)
+
+with tf.Session() as sess:
+    writer = tf.summary.FileWriter("/tmp/tboard/output", sess.graph)
+    print(sess.run(h))
+    writer.close()

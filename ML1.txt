@@ -1,0 +1,24 @@
+
+## (a+b)^3
+
+
+import tensorflow as tf
+a=tf.multiply(1,1)
+b=tf.multiply(2,1)
+c=tf.multiply(a,a)
+i=tf.multiply(c,a)##a^3
+d=tf.multiply(b,b)
+j=tf.multiply(d,b)##b^3
+e=tf.multiply(a,b)
+f=tf.multiply(3,e)##3ab
+k=tf.add(a,b)
+l=tf.multiply(f,k)##3ab(a+b)
+m=tf.add(i,j)
+n=tf.add(m,l)
+
+with tf.Session() as sess:
+    writer = tf.summary.FileWriter("/tmp/tboard/output", sess.graph)
+    print(sess.run(n))
+    writer.close()
+
+
